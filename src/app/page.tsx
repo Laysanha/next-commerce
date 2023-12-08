@@ -1,4 +1,4 @@
-import { Products } from "./components/Products"
+import { Product } from "./components/Product"
 import { ProductType } from "./types/ProductType"
 
 async function getProduts() {
@@ -19,10 +19,10 @@ export default async function Home() {
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6'
       >
         {products.map((product: ProductType) => (
-          <Products 
+          <Product 
             key={product.id}
             product={product}
-          ></Products>
+          ></Product>
         ))}
       </div>
     </div>
