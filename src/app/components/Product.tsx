@@ -22,7 +22,7 @@ export function Product({ product } : ProductProps) {
 
 
             </div>
-            <button className="rounded-md bg-emerald-600 px-2 py-2.5 text-sm">Adicionar ao carrinho</button>
+            <button className="rounded-md bg-emerald-600 px-2 py-2.5 text-sm hover:bg-emerald-700 transition">Adicionar ao carrinho</button>
         </div>
     )
 }

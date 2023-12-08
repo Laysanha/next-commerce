@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navbar } from './components/Navbar'
+import { ClerkProvider } from '@clerk/nextjs'
+import { ptBR } from "@clerk/localizations";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,15 +19,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar/>
-        <main 
-          className='bg-slate-900 h-max p-16'
-        >
-          {children}
-        </main>
-      </body>
-    </html>
+    <ClerkProvider localization={ptBR}>
+      <html lang="en">
+        <body className={inter.className}>
+          <Navbar/>
+          <main 
+            className='bg-slate-900 h-max p-16'
+          >
+            {children}
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
